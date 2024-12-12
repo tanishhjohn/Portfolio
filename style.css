@@ -1,0 +1,142 @@
+*{
+    margin: 0;
+    padding: 0%;
+    font-family: 'Outfit', sans-serif;
+    box-sizing: border-box;
+}
+body{   
+    background: #f9f6f1;
+    color: #232322;
+}
+#header{
+    width: 100%;
+    height: 100vh;
+    background-image: url(images/bg.jpg);
+    background-size: cover;
+    background-position: center;
+}
+.container{
+    position: relative;
+    top: 0;
+    left: 10px 20px;
+}
+.logo{
+    height: 100px;
+    width: auto;
+    margin-left: 20px;
+    margin-right: 20px ;
+}
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+nav ul{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin: 0;
+    padding: 40px;
+}
+nav ul li{
+    list-style: none;
+    margin: 0 25px;
+}
+nav ul li a{
+    color: #232322;
+    text-decoration: none;
+    font-size: 20px;
+    position: relative;
+
+}
+nav ul li a::after{
+    content: '';
+    width: 0;
+    height: 1px;
+    background: #232322;
+    position: absolute;
+    left: 50%;
+    bottom: -6px;
+    transform: translate(-50%);
+    transition: width 0.3s ease;
+}
+nav ul li a:hover::after{
+    width: 80%;
+}
+.header-text{
+    margin-top: 15%;
+    padding-left: 90px;
+    font-size: 30px;
+}
+.header-text h1{
+    font-size: 60px;
+    margin-top: 2%;
+}
+.header-text h2{
+    margin-top: 15px;
+    font-weight: normal;
+    font-size: 42px;
+    color: #454545;
+}
+.header-text h2 span{
+    color: #db960c;
+}
+
+/* About Section */
+#about{
+    padding: 60px 0;
+}
+#about h1{
+    text-align: center;
+    font-size: 40px;
+    padding-top: 50px;
+}
+.slider-container{
+    position: relative;
+    overflow: hidden;
+    width: 80%;
+    margin: 0 auto;
+    background-color: #f9f6f1;
+    padding: 20px 0;
+   
+}
+.icon-strip {
+    display: flex;
+    align-items: center;
+    gap: 140px;
+    animation: slide 25s linear infinite;
+  }
+
+.icon-strip img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+  }
+@keyframes slide {
+     0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+.slider-container::before,
+.slider-container::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 10%; 
+    pointer-events: none;
+    z-index: 1;
+}
+
+.slider-container::before {
+    left: 0;
+    background: linear-gradient(to right, #f9f6f1, rgba(249, 246, 241, 0));
+}
+
+.slider-container::after {
+    right: 0;
+    background: linear-gradient(to left, #f9f6f1, rgba(249, 246, 241, 0));
+}
